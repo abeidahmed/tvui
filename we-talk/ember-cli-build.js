@@ -6,11 +6,16 @@ module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
     postcssOptions: {
       compile: {
+        cacheInclude: [/.*\.(css|hbs)$/, /.tailwind\.config\.js$/],
+        includePaths: ['app'],
         plugins: [
           { module: require('postcss-import') },
           require('tailwindcss')('./tailwind.config.js'),
         ],
       },
+    },
+    svgJar: {
+      sourceDirs: ['public/images/icons'],
     },
   });
 
