@@ -1,7 +1,12 @@
+/* eslint-disable no-undef */
 module.exports = {
-  content: [],
+  content: [
+    './app/templates/*.{hbs}',
+    './app/components/*.{hbs, js}',
+    './app/styles/*.{css}',
+  ],
   theme: {
     extend: {},
   },
-  plugins: [],
-}
+  plugins: [require('@tailwindcss/forms')],
+};
