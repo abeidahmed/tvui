@@ -1,0 +1,29 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+we-talk/dist/
+we-talk/tmp/
+
+# dependencies
+we-talk/bower_components/
+we-talk/node_modules/
+
+# misc
+we-talk/.env*
+we-talk/.pnp*
+we-talk/.sass-cache
+we-talk/.eslintcache
+we-talk/connect.lock
+we-talk/coverage/
+we-talk/libpeerconnection.log
+we-talk/npm-debug.log*
+we-talk/testem.log
+we-talk/yarn-error.log
+
+# ember-try
+we-talk/.node_modules.ember-try/
+we-talk/bower.json.ember-try
+we-talk/npm-shrinkwrap.json.ember-try
+we-talk/package.json.ember-try
+we-talk/package-lock.json.ember-try
+we-talk/yarn.lock.ember-try
