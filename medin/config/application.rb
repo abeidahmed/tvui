@@ -15,6 +15,11 @@ module Medin
     config.active_job.queue_adapter = :sidekiq
     config.action_mailer.deliver_later_queue_name = :default
 
+    # Avoid generating these files on scaffold
+    config.generators.stylesheets = false
+    config.generators.helper = false
+    config.generators.helper_specs = false
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
