@@ -1,13 +1,14 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { next } from '@ember/runloop';
+import { Keys } from '../../constants/keyboard';
 
 export default class DropdownButton extends Component {
   @action onKeydown(event) {
     switch (event.key) {
-      case 'ArrowDown':
-      case ' ':
-      case 'Enter': {
+      case Keys.ArrowDown:
+      case Keys.Space:
+      case Keys.Enter: {
         event.preventDefault();
         event.stopPropagation();
 
@@ -21,7 +22,7 @@ export default class DropdownButton extends Component {
         }
         break;
       }
-      case 'ArrowUp': {
+      case Keys.ArrowUp: {
         event.preventDefault();
         event.stopPropagation();
         this.args.openMenu();

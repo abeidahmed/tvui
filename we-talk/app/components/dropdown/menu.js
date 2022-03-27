@@ -1,11 +1,12 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
+import { Keys } from '../../constants/keyboard';
 
 export default class DropdownMenuComponent extends Component {
   @action onKeydown(event) {
     switch (event.key) {
       // Escape key is handled by focus-trap
-      case 'Enter': {
+      case Keys.Enter: {
         if (this.args.activeItem) {
           event.preventDefault();
           event.stopPropagation();
@@ -14,13 +15,13 @@ export default class DropdownMenuComponent extends Component {
         }
         break;
       }
-      case 'ArrowDown': {
+      case Keys.ArrowDown: {
         event.preventDefault();
         event.stopPropagation();
         this.args.navigate(1);
         break;
       }
-      case 'ArrowUp': {
+      case Keys.ArrowUp: {
         event.preventDefault();
         event.stopPropagation();
         this.args.navigate(-1);
