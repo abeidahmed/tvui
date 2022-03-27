@@ -1,0 +1,18 @@
+<div ...attributes>
+  {{yield (hash
+    Button=(component
+      "dropdown/button"
+      isActive=this.isActive
+      toggleMenu=this.toggleMenu
+      buttonId=this.buttonId
+      menuId=this.menuId
+    )
+    Menu=(component
+      "dropdown/menu"
+      isActive=this.isActive
+      buttonId=this.buttonId
+      menuId=this.menuId
+      closeMenu=this.closeMenu
+    )
+  )}}
+</div>

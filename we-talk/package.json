@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
+    "@ember/render-modifiers": "^2.0.4",
     "@ember/test-helpers": "^2.6.0",
     "@glimmer/component": "^1.0.4",
     "@glimmer/tracking": "^1.0.4",
@@ -44,12 +45,14 @@
     "ember-export-application-global": "^2.0.1",
     "ember-fetch": "^8.1.1",
     "ember-load-initializers": "^2.1.2",
+    "ember-modifier": "^3.1.0",
     "ember-page-title": "^7.0.0",
     "ember-qunit": "^5.1.5",
     "ember-resolver": "^8.0.3",
     "ember-source": "~4.2.0",
     "ember-svg-jar": "^2.3.4",
     "ember-template-lint": "^4.2.0",
+    "ember-truth-helpers": "^3.0.0",
     "ember-welcome-page": "^6.1.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.4.0",
@@ -71,5 +74,8 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "dependencies": {
+    "focus-trap": "^6.7.3"
   }
 }

@@ -1,0 +1,13 @@
+<a
+  href="#"
+  class="block w-full rounded py-1 px-2 hover:bg-gray-200 {{if this.active "bg-gray-200"}} focus:outline-none"
+  role="menuitem"
+  tabindex="-1"
+  ...attributes
+  {{did-insert this.registerItem}}
+  {{on "mouseover" this.onMouseOver}}
+  {{on "click" @closeMenu}}
+  {{will-destroy this.unregisterItem}}
+>
+  {{yield}}
+</a>

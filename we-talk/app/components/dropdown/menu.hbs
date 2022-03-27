@@ -1,0 +1,28 @@
+{{#if @isActive}}
+  <div
+    id={{@menuId}}
+    role="menu"
+    class="absolute top-100 w-48 bg-white shadow-lg right-0 border rounded p-1 mt-1"
+    aria-labelledby={{@buttonId}}
+    ...attributes
+    tabindex="-1"
+    {{on "keydown" this.onKeydown}}
+    {{focus-trap options=(hash
+      allowOutsideClick=this.allowClickOutsideFocusTrap
+      clickOutsideDeactivates=this.clickOutsideFocusTrapDeactivates
+      initialFocus=(concat "#" @menuId)
+      fallbackFocus=(concat "#" @menuId)
+      onDeactivate=this.reset
+    )}}
+  >
+    {{yield (hash
+      Item=(component
+        "dropdown/menu-item"
+        registerItem=this.registerItem
+        unregisterItem=this.unregisterItem
+        setActiveItem=this.setActiveItem
+        closeMenu=@closeMenu
+      )
+    )}}
+  </div>
+{{/if}}

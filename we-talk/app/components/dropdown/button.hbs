@@ -1,0 +1,11 @@
+<button
+  id={{@buttonId}}
+  type="button"
+  aria-haspopup="true"
+  aria-expanded="{{@isActive}}"
+  aria-controls={{if @isActive @menuId}}
+  ...attributes
+  {{on "click" @toggleMenu}}
+>
+ {{yield}}
+</button>
