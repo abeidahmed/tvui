@@ -4,9 +4,10 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.0.1",
     "@hotwired/turbo-rails": "^7.1.1",
-    "esbuild": "^0.14.28"
+    "esbuild": "^0.14.28",
+    "glob": "^7.2.0"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds"
+    "build": "node esbuild.config.js"
   }
 }
