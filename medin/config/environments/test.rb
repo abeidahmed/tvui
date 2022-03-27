@@ -27,6 +27,9 @@ Rails.application.configure do
   config.action_controller.perform_caching = false
   config.cache_store = :null_store
 
+  # Set inline so that job executes immediately
+  config.active_job.queue_adapter = :inline
+
   # Raise exceptions instead of rendering exception templates.
   config.action_dispatch.show_exceptions = false
 
@@ -35,6 +38,8 @@ Rails.application.configure do
 
   # Store uploaded files on the local file system in a temporary directory.
   config.active_storage.service = :test
+
+  config.action_mailer.default_url_options = {host: "localhost", port: 3000}
 
   config.action_mailer.perform_caching = false
 
