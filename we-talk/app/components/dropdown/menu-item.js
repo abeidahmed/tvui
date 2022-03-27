@@ -1,8 +1,10 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
+import { guidFor } from '@ember/object/internals';
 
 export default class DropdownMenuItem extends Component {
+  menuItemId = `${guidFor(this)}-wetalk-menu-item`;
   @tracked active = false;
   item = null;
 

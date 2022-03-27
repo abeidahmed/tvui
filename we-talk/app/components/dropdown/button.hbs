@@ -6,6 +6,7 @@
   aria-controls={{if @isActive @menuId}}
   ...attributes
   {{on "click" @toggleMenu}}
+  {{on "keydown" this.onKeydown}}
 >
  {{yield}}
 </button>
