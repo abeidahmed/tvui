@@ -1,5 +1,6 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
+# Ember stuff
 # compiled output
 we-talk/dist/
 we-talk/tmp/
@@ -27,3 +28,37 @@ we-talk/npm-shrinkwrap.json.ember-try
 we-talk/package.json.ember-try
 we-talk/package-lock.json.ember-try
 we-talk/yarn.lock.ember-try
+
+# ======================================================================================================================
+
+# Rails stuff
+# Ignore bundler config.
+medin/.bundle
+
+# Ignore all logfiles and tempfiles.
+medin/log/*
+medin/tmp/*
+medin/log/.keep
+medin/tmp/.keep
+
+# Ignore pidfiles, but keep the directory.
+medin/tmp/pids/*
+medin/tmp/pids/
+medin/tmp/pids/.keep
+
+# Ignore uploaded files in development.
+medin/storage/*
+medin/storage/.keep
+medin/tmp/storage/*
+medin/tmp/storage/
+medin/tmp/storage/.keep
+
+medin/public/assets
+
+# Ignore master key for decrypting credentials and more.
+medin/config/master.key
+
+medin/app/assets/builds/*
+medin/app/assets/builds/.keep
+
+medin/node_modules

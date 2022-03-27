@@ -1,0 +1,10 @@
+# Rails stuff
+# See https://git-scm.com/docs/gitattributes for more about git attribute files.
+
+# Mark the database schema as having been generated.
+medin/db/schema.rb linguist-generated
+
+# Mark any vendored files as having been vendored.
+medin/vendor/* linguist-vendored
+
+# ======================================================================================================================
