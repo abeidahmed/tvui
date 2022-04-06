@@ -6,5 +6,5 @@ class User < ApplicationRecord
   validates :first_name, presence: true, length: {maximum: 127}
   validates :last_name, length: {maximum: 127}
 
-  has_many :appointments, dependent: :destroy
+  has_many :appointments, foreign_key: :creator_id, dependent: :destroy
 end
