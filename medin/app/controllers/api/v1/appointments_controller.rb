@@ -1,10 +1,8 @@
 module Api
   module V1
     class AppointmentsController < ApplicationController
-      skip_before_action :authenticate_user!
-
       def index
-        appointments = Appointment.all
+        appointments = current_user.appointments
         render json: appointments
       end
 

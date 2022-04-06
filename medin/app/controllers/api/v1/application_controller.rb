@@ -5,6 +5,10 @@ module Api
 
       private
 
+      def authenticate_user!
+        head :unauthorized unless signed_in?
+      end
+
       def jsonapi_params(only:)
         ActiveModelSerializers::Deserialization.jsonapi_parse!(params, only: only)
       end
