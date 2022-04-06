@@ -20,8 +20,9 @@
       <hr class="my-4">
 
       <section class="mt-4 flex flex-col space-y-3">
-        <Appointment />
-        <Appointment />
+        {{#each @model as |appointment|}}
+          <Appointment @appointment={{appointment}} />
+        {{/each}}
       </section>
     </section>
   </main>
