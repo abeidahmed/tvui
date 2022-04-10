@@ -11,14 +11,22 @@ services:
   redis:
     image: "redis:latest"
 
+  nginx:
+    restart: "always"
+    build:
+      context: ./nginx
+    ports:
+      - "8080:80"
+    depends_on:
+      - medin
+      - wetalk
+
   medin:
     build:
       context: ./medin
     volumes:
       - /app/node_modules
       - ./medin:/app
-    ports:
-      - "3000:3000"
     environment:
       - PGUSER=postgres
       - PGPASSWORD=password
@@ -35,7 +43,5 @@ services:
     volumes:
       - /app/node_modules
       - ./we-talk:/app
-    ports:
-      - "4200:4200"
     depends_on:
       - medin
