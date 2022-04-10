@@ -1,0 +1,41 @@
+version: "3"
+
+services:
+  postgres:
+    image: "postgres:12.10-alpine"
+    restart: "always"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+
+  redis:
+    image: "redis:latest"
+
+  medin:
+    build:
+      context: ./medin
+    volumes:
+      - /app/node_modules
+      - ./medin:/app
+    ports:
+      - "3000:3000"
+    environment:
+      - PGUSER=postgres
+      - PGPASSWORD=password
+      - PGHOST=postgres
+      - PGPORT=5432
+      - REDIS_URL=redis
+    depends_on:
+      - postgres
+      - redis
+
+  wetalk:
+    build:
+      context: ./we-talk
+    volumes:
+      - /app/node_modules
+      - ./we-talk:/app
+    ports:
+      - "4200:4200"
+    depends_on:
+      - medin
